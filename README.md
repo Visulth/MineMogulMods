@@ -1,6 +1,6 @@
 # DeletePickaxes
 
-Deletes all pickaxes when deleting physics objects from the start menu (including ones in your inventory)
+Deletes all pickaxes (including ones in your inventory) when deleting physics objects from the pause menu
 
 (Someone bought 1000 pickaxes)
 
