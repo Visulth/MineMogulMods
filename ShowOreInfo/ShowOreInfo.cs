@@ -3,6 +3,7 @@ using UnityEngine;
 using TMPro;
 using System;
 using System.Linq;
+using System.Text;
 
 namespace ShowOreInfo
 {
@@ -25,7 +26,8 @@ namespace ShowOreInfo
 			
 			lastUpdateTime = Time.realtimeSinceStartup;
 
-			oreUpdateText = UpdateOreCounts();
+			//oreUpdateText = UpdateOreCounts();
+			oreUpdateText = BuildResourceString();
 
 			//for (int i = 0; i < OrePiece.AllOrePieces.Count; i++)
 			//{
@@ -39,18 +41,48 @@ namespace ShowOreInfo
 			return false;
 		}
 
-		static string UpdateOreCounts()
-		{
-			string result = string.Empty;
+		//static string UpdateOreCounts()
+		//{
+		//	string result = string.Empty;
 
-			//result += "ResourceType Counts:\n";
+		//	//result += "ResourceType Counts:\n";
+
+		//	foreach (ResourceType rt in Enum.GetValues(typeof(ResourceType)))
+		//	{
+		//		if (rt == ResourceType.INVALID) continue; // skip INVALID if needed
+		//		int count = OrePiece.AllOrePieces.Count(op => op.ResourceType == rt);
+		//		result += $"{rt}: {count}, ";
+		//	}
+		//	return result;
+		//}
+
+		private static readonly StringBuilder _sb = new StringBuilder(128);
+		
+		static string BuildResourceString()
+		{
+			//This runs in Update() so I'm being pointlessly careful about memory allocation
+			_sb.Clear();
+			bool first = true;
+
 			foreach (ResourceType rt in Enum.GetValues(typeof(ResourceType)))
 			{
-				if (rt == ResourceType.INVALID) continue; // skip INVALID if needed
+				if (rt == ResourceType.INVALID) 
+					continue;
+
 				int count = OrePiece.AllOrePieces.Count(op => op.ResourceType == rt);
-				result += $"{rt}: {count}, ";
+
+				if (!first)
+					_sb.Append(", ");
+
+				_sb.Append(rt);
+				_sb.Append(": ");
+				_sb.Append(count);
+
+				first = false;
 			}
-			return result;
+
+			return _sb.ToString();
 		}
+
 	}
 }
