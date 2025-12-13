@@ -4,11 +4,7 @@ obj/
 .vs/
 *.user
 *.suo
-
-# Ignore compiled DLLs you don’t want to ship
-# *.dll
-# !lib/BepInEx.dll
-# !lib/0Harmony.dll
+*.pubxml
 
 # Ignore Unity / game assemblies
 Assembly-CSharp.dll
