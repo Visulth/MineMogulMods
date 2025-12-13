@@ -17,10 +17,10 @@ Press H to freeze a buildable ghost/hologram
 While frozen, can nudge horizontally with arrow keys, or vertically with page up or down.
 
 ## Version
-- Mod: 1.0.0
+- Mod: 1.1.0
 - Tested with:
 	- BepInEx: 5.4.23.4
-	- MineMogul 0.1.0.3 Early Access
+	- MineMogul 0.1.1.0 Early Access
 
 # Hide Quest HUD
 
@@ -30,7 +30,7 @@ Removes HUD text for active quests (they are still active and can be viewed in t
 - Mod: 1.0.0
 - Tested with:
 	- BepInEx: 5.4.23.4
-	- MineMogul 0.1.0.3 Early Access
+	- MineMogul 0.1.1.0 Early Access
 
 # NoSupports
 
@@ -42,7 +42,7 @@ Non-destructive; if the mod is removed all supports are created normally.
 - Mod: 1.0.0
 - Tested with:
 	- BepInEx: 5.4.23.4
-	- MineMogul 0.1.0.3 Early Access
+	- MineMogul 0.1.1.0 Early Access
 	
 # ShowOreInfo
 
@@ -52,4 +52,4 @@ Shows the types of active physics resources in the start menu's active physics o
 - Mod: 1.1.0
 - Tested with:
 	- BepInEx: 5.4.23.4
-	- MineMogul 0.1.0.3 Early Access
+	- MineMogul 0.1.1.0 Early Access
