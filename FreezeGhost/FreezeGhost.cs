@@ -9,13 +9,10 @@ namespace NoSupports
 	[HarmonyPatch(typeof(ToolBuilder))]
 	class FreezeGhost
     {
-		static AccessTools.FieldRef<ToolBuilder, float> UseRangeRef = AccessTools.FieldRefAccess<ToolBuilder, float>("UseRange");
-
-		static float UseRange = 3f;
+		//static AccessTools.FieldRef<ToolBuilder, float> UseRangeRef = AccessTools.FieldRefAccess<ToolBuilder, float>("UseRange");
 
 		//static Vector3 SuggestedPosition = Vector3.zero;
 		static Vector3 LastBuildPosition;
-		//static Vector3Int LastBuildPosition;
 		static Vector3 NudgeDirection = Vector3.zero;
 
 		static bool ShouldFreezeGhost = false;
@@ -39,36 +36,30 @@ namespace NoSupports
 			if (Input.GetKeyDown(KeyCode.UpArrow))
 			{
 				NudgeDirection += Vector3.forward;
-				Debug.Log($"Nudging ${NudgeDirection}");
 			}
 			else if (Input.GetKeyDown(KeyCode.DownArrow))
 			{
 				NudgeDirection += Vector3.back;
-				Debug.Log($"Nudging ${NudgeDirection}");
 			}
 			//else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.Keypad4))
 			else if (Input.GetKeyDown(KeyCode.LeftArrow))
 			{
 				NudgeDirection += Vector3.left;
-				Debug.Log($"Nudging ${NudgeDirection}");
 			}
 			//else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.Keypad6))
 			else if (Input.GetKeyDown(KeyCode.RightArrow))
 			{
 				NudgeDirection += Vector3.right;
-				Debug.Log($"Nudging ${NudgeDirection}");
 			}
 			//else if (Input.GetKeyDown(KeyCode.Keypad8))
 			else if (Input.GetKeyDown(KeyCode.PageUp))
 			{
 				NudgeDirection += Vector3.up;
-				Debug.Log($"Nudging ${NudgeDirection}");
 			}
 			//else if (Input.GetKeyDown(KeyCode.Keypad2))
 			else if (Input.GetKeyDown(KeyCode.PageDown))
 			{
 				NudgeDirection += Vector3.down;
-				Debug.Log($"Nudging ${NudgeDirection}");
 			}
 		}
 
@@ -108,56 +99,13 @@ namespace NoSupports
 			}
 		}
 
-		//[HarmonyPatch(typeof(ToolBuilder), "GetBuildPosition")]
-		//[HarmonyPrefix]
-		//static bool GetBuildPosition_Prefix(ToolBuilder __instance, Camera playerCamera, ref Vector3 __result)
-		//{
-
-		//	UseRange = UseRangeRef(__instance);
-
-		//	Vector3 newBuildPosition = GetBuildPosition(playerCamera);
-
-		//	if (ShouldFreezeGhost)
-		//	{
-		//		__result = LastGhostPosition(playerCamera);	
-		//	}
-		//	else
-		//	{
-		//		__result = newBuildPosition;
-		//		LastBuildPosition = newBuildPosition;
-		//	}
-
-		//	return false;
-		//}
-
-		//static Vector3 GetBuildPosition(Camera playerCamera)
-		//{
-		//	RaycastHit raycastHit;
-		//	if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out raycastHit, UseRange, Singleton<BuildingManager>.Instance.BuildingPlacementRaycastLayer))
-		//	{
-		//		return raycastHit.point;
-		//	}
-		//	return playerCamera.transform.position + playerCamera.transform.forward * UseRange;
-		//}
-
 		static Vector3 LastGhostPosition(Camera playerCamera)
 		{
 			if (NudgeDirection == Vector3.zero)
 				return LastBuildPosition;
 
-			//Vector3 localNudge = playerCamera.transform.parent.TransformDirection(NudgeDirection);
-			//Vector3 localNudge = Singleton<BuildingManager>.Instance.GhostObjectTransform.position + NudgeDirection;
-
-
-			//LastBuildPosition += localNudge;
 			LastBuildPosition += GetConstrainedNudge(playerCamera);
-			//LastBuildPosition += Vector3Int.FloorToInt(GetConstrainedNudge(playerCamera));
 			return LastBuildPosition;
-
-			//Vector3 nudgedPosition = LastBuildPosition + localNudge;
-			//NudgeDirection = Vector3.zero;
-
-			//return nudgedPosition;
 		}
 
 		static Vector3 GetConstrainedNudge(Camera playerCamera)
@@ -198,24 +146,33 @@ namespace NoSupports
 			return nudge;
 		}
 
-		static void ResetGhostSetting()
+		static void ResetGhostSetting(ToolBuilder instance)
 		{
+			//if (!Singleton<BuildingManager>.Instance)
+			//	return;
+			//if (Singleton<BuildingManager>.Instance.GhostObjectTransform != instance.transform)
+			//	return;
+			if (instance.Owner == null)
+				return;
+
 			ShouldFreezeGhost = false;
 			NudgeDirection = Vector3.zero;
 		}
 
 		[HarmonyPatch(typeof(ToolBuilder), "PrimaryFire")]
 		[HarmonyPostfix]
-		static void PrimaryFire_PostFix()
+		static void PrimaryFire_PostFix(ToolBuilder __instance)
 		{
-			ResetGhostSetting();
+			ResetGhostSetting(__instance);
+			//Debug.Log($"PrimaryFire on {__instance.gameObject}");
 		}
 
 		[HarmonyPatch(typeof(ToolBuilder), "OnDisable")]
 		[HarmonyPostfix]
-		static void OnDisable_PostFix()
+		static void OnDisable_PostFix(ToolBuilder __instance)
 		{
-			ResetGhostSetting();
+			ResetGhostSetting(__instance);
+			//Debug.Log($"OnDisable on {__instance.gameObject}");
 		}
 	}
 }
