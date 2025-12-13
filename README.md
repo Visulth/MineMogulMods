@@ -49,7 +49,7 @@ Non-destructive; if the mod is removed all supports are created normally.
 Shows the types of active physics resources in the start menu's active physics object text.
 
 ## Version
-- Mod: 1.0.0
+- Mod: 1.1.0
 - Tested with:
 	- BepInEx: 5.4.23.4
 	- MineMogul 0.1.0.3 Early Access
