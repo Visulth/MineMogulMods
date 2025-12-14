@@ -1,14 +1,12 @@
-# DeletePickaxes
+# Build Platforms Anywhere
 
-Deletes all pickaxes (including ones in your inventory) when deleting physics objects from the pause menu
-
-(Someone bought 1000 pickaxes)
+Allows Platforms and Ramps to ignore any validity checks -- build them anywhere! 
 
 ## Version
 - Mod: 1.0.0
 - Tested with:
 	- BepInEx: 5.4.23.4
-	- MineMogul 0.1.0.3 Early Access
+	- MineMogul 0.1.1.0 Early Access
 
 # FreezeGhost
 
@@ -53,3 +51,15 @@ Shows the types of active physics resources in the start menu's active physics o
 - Tested with:
 	- BepInEx: 5.4.23.4
 	- MineMogul 0.1.1.0 Early Access
+	
+# DeletePickaxes
+
+Deletes all pickaxes (including ones in your inventory) when deleting physics objects from the pause menu
+
+(Someone bought 1000 pickaxes)
+
+## Version
+- Mod: 1.0.0
+- Tested with:
+	- BepInEx: 5.4.23.4
+	- MineMogul 0.1.0.3 Early Access
