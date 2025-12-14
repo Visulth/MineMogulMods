@@ -11,7 +11,7 @@ namespace HideQuestHUD
 	class HideQuestHudPatch
     {
 
-		static AccessTools.FieldRef<QuestHud, List<QuestInfoUI>> questInfoUIRef = AccessTools.FieldRefAccess<QuestHud, List<QuestInfoUI>>("_questInfoUIs");
+		//static AccessTools.FieldRef<QuestHud, List<QuestInfoUI>> questInfoUIRef = AccessTools.FieldRefAccess<QuestHud, List<QuestInfoUI>>("_questInfoUIs");
 		//Called by questInfoUIRef(__instance)
 
 		//static Action<QuestHud, Quest> _addQuest;
@@ -55,11 +55,11 @@ namespace HideQuestHUD
 		//	_addQuest = HarmonyLib.AccessTools.MethodDelegate<Action<QuestHud, Quest>>(HarmonyLib.AccessTools.Method(typeof(QuestHud), "AddQuest"));
 		//}
 
-		[HarmonyPatch("RegenerateQuestList")]
-		[HarmonyPostfix]
-		static void RQL_Postfix()
-		{
-			Debug.Log($"{PluginInfo.Name}: Attempting to RegenerateQuestList!");
-		}
+		//[HarmonyPatch("RegenerateQuestList")]
+		//[HarmonyPostfix]
+		//static void RQL_Postfix()
+		//{
+		//	//Debug.Log($"{PluginInfo.Name}: Attempting to RegenerateQuestList!");
+		//}
 	}
 }

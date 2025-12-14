@@ -32,6 +32,13 @@ While frozen, can nudge horizontally with arrow keys, or vertically with page up
 	- BepInEx: 5.4.23.4
 	- MineMogul 0.1.1.0 Early Access
 
+<details>
+	<summary>Changelog</summary>
+	
+	1.1.0
+	- Now allows you to freeze a ghost in spot and pick up the old buildable manually without unfreezing the ghost for slightly easier swapping
+</details>
+	
 ## Hide Quest HUD
 
 Removes HUD text for active quests (they are still active and can be viewed in the Quests screen)
@@ -70,6 +77,13 @@ Shows the types of active physics resources in the start menu's active physics o
 - Tested with:
 	- BepInEx: 5.4.23.4
 	- MineMogul 0.1.1.0 Early Access
+	
+<details>
+	<summary>Changelog</summary>
+	
+	1.1.0
+	- Memory allocation optimization since that text runs every frame (changed it to update once a second)
+</details>
 	
 ## Delete Pickaxes
 
