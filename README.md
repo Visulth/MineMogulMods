@@ -1,7 +1,6 @@
 # Install Instructions
 
-1. [Install BepInEx](https://github.com/BepInEx/BepInEx/releases): Download the latest [64-bit BepInEx version](https://github.com/BepInEx/BepInEx/releases/download/v5.4.23.4/BepInEx_win_x64_5.4.23.4.zip), extract into the game's steam install folder
-(So in the root game folder there should be: BepInEx [folder], changelog.txt, doorstop_config.ini, winhttp.dll, along with the game's exe)
+1. [Install BepInEx](https://github.com/BepInEx/BepInEx/releases): Download the latest [64-bit BepInEx version](https://github.com/BepInEx/BepInEx/releases/download/v5.4.23.4/BepInEx_win_x64_5.4.23.4.zip), extract into the game's steam install folder (in the root game folder there should be: BepInEx [folder], changelog.txt, doorstop_config.ini, winhttp.dll, along with the game's exe).
 
 2. Run the game once and close it. You'll know if BepInEx worked if inside the BepInEx folder is now more stuff like "Config", "LogOutput.log", etc
 
@@ -38,10 +37,17 @@ While frozen, can nudge horizontally with arrow keys, or vertically with page up
 Removes HUD text for active quests (they are still active and can be viewed in the Quests screen)
 
 ### Version
-- Mod: 1.0.0
+- Mod: 1.1.0
 - Tested with:
 	- BepInEx: 5.4.23.4
 	- MineMogul 0.1.1.0 Early Access
+	
+<details>
+	<summary>Changelog</summary>
+	
+	1.1.0
+	- Stopped game from constantly attempting to regenerate empty Quest HUD UI
+</details>
 
 ## No Supports
 

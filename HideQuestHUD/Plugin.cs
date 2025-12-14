@@ -2,23 +2,28 @@
 using UnityEngine;
 using HarmonyLib;
 
-[BepInPlugin("com.visulth.hidequesthud", "HideQuestHUD", "1.0.0")]
+internal static class PluginInfo
+{
+	public const string Author = "Visulth";
+	public const string Name = "HideQuestHUD";
+	public const string GUID = "com." + Author + "." + Name;
+	public const string Version = "1.1.0";
+}
+
+[BepInPlugin(PluginInfo.GUID, PluginInfo.Name, PluginInfo.Version)]
 public class Plugin : BaseUnityPlugin
 {
-
 	private Harmony _harmony;
 
 	void Awake()
 	{
-		_harmony = new Harmony("com.visulth.hidequesthud");
+		_harmony = new Harmony(PluginInfo.GUID);
 		_harmony.PatchAll();  // Applies all [HarmonyPatch] annotations in your assembly
-
-		Logger.LogInfo("HideQuestHUD loaded.");
+		Logger.LogInfo($"{PluginInfo.Name} loaded.");
 	}
 
 	private void OnDestroy()
 	{
-		//_harmony.UnpatchAll("com.visulth.hidequesthud");
 		_harmony.UnpatchSelf();
 	}
 }
