@@ -20,6 +20,16 @@ Allows Platforms and Ramps to ignore any validity checks -- build them anywhere!
 	- BepInEx: 5.4.23.4
 	- MineMogul 0.1.1.0 Early Access
 
+## Clear Buildables
+
+Deletes all platforms, buildings, and machines (except miners, decorative / lamps) when deleting physics objects from the pause menu.
+
+### Version
+- Mod: 1.0.0
+- Tested with:
+	- BepInEx: 5.4.23.4
+	- MineMogul 0.1.1.0 Early Access
+	
 ## Freeze Ghost
 
 Like in Satisfactory, press H to toggle freezing a buildable ghost/hologram so you can inspect your placement more thoroughly.
