@@ -2,7 +2,7 @@
 using UnityEngine;
 using HarmonyLib;
 
-[BepInPlugin("com.visulth.ShowOreInfo", "ShowOreInfo", "1.0.0")]
+[BepInPlugin("com.visulth.ShowOreInfo", "ShowOreInfo", "1.1.0")]
 public class Plugin : BaseUnityPlugin
 {
 	private Harmony _harmony;
