@@ -11,120 +11,118 @@
 # Mods
 
 ## Build Platforms Anywhere
-
 Allows Platforms and Ramps to ignore any validity checks -- build them anywhere! 
-
+<details>
+	
 ### Version
 - Mod: 1.0.0
 - Tested with:
 	- BepInEx: 5.4.23.4
 	- MineMogul 0.1.1.0 Early Access
+
+### Changelog
+> 1.1.0
+> - Now allows you to freeze a ghost in spot and pick up the old buildable manually without unfreezing the ghost for slightly easier swapping
+</details>
 
 ## Clear Buildables
-
 Deletes all platforms, buildings, and machines (except miners, decorative / lamps) when deleting physics objects from the pause menu.
-
+<details>
+	
 ### Version
 - Mod: 1.0.0
 - Tested with:
 	- BepInEx: 5.4.23.4
 	- MineMogul 0.1.1.0 Early Access
+</details>
 
 ## Clear Out Of Bounds Ore
-
 Changes physics object deletion to only delete out of bounds ore (which is typically 0), and allows null object deletion to work normally (which happens in the normal ore-clean up). If you're hoarding piles of gems, this mod is useful as it does not delete all the ore on the map.
+<details>
 
 ### Version
 - Mod: 1.0.0
 - Tested with:
 	- BepInEx: 5.4.23.4
 	- MineMogul 0.1.1.0 Early Access
-	
+</details>
+
 ## Freeze Ghost
-
-Like in Satisfactory, press H to toggle freezing a buildable ghost/hologram so you can inspect your placement more thoroughly.
-
-While frozen, can nudge horizontally with arrow keys, or vertically with page up or down.
-
+Like in Satisfactory, press H to toggle freezing a buildable ghost/hologram so you can inspect your placement more thoroughly. While frozen, can nudge horizontally with arrow keys, or vertically with page up or down.
+<details>
+	
 ### Version
 - Mod: 1.1.0
 - Tested with:
 	- BepInEx: 5.4.23.4
 	- MineMogul 0.1.1.0 Early Access
 
-<details>
-	<summary>Changelog</summary>
-	
-	1.1.0
-	- Now allows you to freeze a ghost in spot and pick up the old buildable manually without unfreezing the ghost for slightly easier swapping
+### Changelog
+> 1.1.0
+> - Now allows you to freeze a ghost in spot and pick up the old buildable manually without unfreezing the ghost for slightly easier swapping
 </details>
 	
 ## Hide Quest HUD
-
 Removes HUD text for active quests (they are still active and can be viewed in the Quests screen)
-
+<details>
+	
 ### Version
 - Mod: 1.1.0
 - Tested with:
 	- BepInEx: 5.4.23.4
 	- MineMogul 0.1.1.0 Early Access
 	
-<details>
-	<summary>Changelog</summary>
-	
-	1.1.0
-	- Stopped game from constantly attempting to regenerate empty Quest HUD UI
+### Changelog
+> 1.1.0
+> - Stopped game from constantly attempting to regenerate empty Quest HUD UI
 </details>
 
 ## Rotate Miners
-
 Allows autominers to be rotated
+<details>
 
 ### Version
 - Mod: 1.0.0
 - Tested with:
 	- BepInEx: 5.4.23.4
 	- MineMogul 0.1.1.1 Early Access
+</details>
 
 ## No Supports
-
-Prevents all buildables from building supports. 
-
-Non-destructive; if the mod is removed all supports are created normally.
-
+Prevents all buildables from building supports. Non-destructive; if the mod is removed all supports are created normally.
+<details>
+	
 ### Version
 - Mod: 1.0.0
 - Tested with:
 	- BepInEx: 5.4.23.4
 	- MineMogul 0.1.1.0 Early Access
-	
+</details>
+
 ## Show Ore Info
-
 Shows the types of active physics resources in the start menu's active physics object text.
-
+<details>
+	
 ### Version
 - Mod: 1.2.0
 - Tested with:
 	- BepInEx: 5.4.23.4
 	- MineMogul 0.1.1.0 Early Access
 	
-<details>
-	<summary>Changelog</summary>
-	
-	1.2.0
-	- Now shows sleeping / non-moving (static) ore counts which are typically ore spills.
-	1.1.0
-	- Memory allocation optimization since that text runs every frame (changed it to update once a second)
+### Changelog
+> 1.2.0
+> - Now shows sleeping / non-moving (static) ore counts which are typically ore spills.
+> 1.1.0
+> - Memory allocation optimization since that text runs every frame (changed it to update once a second)
 </details>
 	
 ## Delete Pickaxes
-
-Deletes all pickaxes (including ones in your inventory) when deleting physics objects from the pause menu
-
-(Someone bought 1000 pickaxes)
-
+Deletes all pickaxes (including ones in your inventory) when deleting physics objects from the pause menu. (Someone bought 1000 pickaxes)
+<details>
+	
 ### Version
 - Mod: 1.0.0
 - Tested with:
 	- BepInEx: 5.4.23.4
 	- MineMogul 0.1.0.3 Early Access
+ </details>
