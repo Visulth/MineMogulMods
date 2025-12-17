@@ -76,6 +76,16 @@ Removes HUD text for active quests (they are still active and can be viewed in t
 	- Stopped game from constantly attempting to regenerate empty Quest HUD UI
 </details>
 
+## Rotate Miners
+
+Allows autominers to be rotated
+
+### Version
+- Mod: 1.0.0
+- Tested with:
+	- BepInEx: 5.4.23.4
+	- MineMogul 0.1.1.1 Early Access
+
 ## No Supports
 
 Prevents all buildables from building supports. 
